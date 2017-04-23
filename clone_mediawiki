@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -ex
+
+if aws codecommit get-repository --repository-name mediawiki ; then
+    echo repository already created
+else
+    aws codecommit create-repository --repository-name mediawiki \
+        --repository-description "truncated clone of mediawiki" \
+        | tee create-repo.json
+fi
+
+
+git clone --depth=1 https://gerrit.wikimedia.org/r/p/mediawiki/core.git \
+    mediawiki
+
+
