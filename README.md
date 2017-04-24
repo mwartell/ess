@@ -86,7 +86,7 @@ as Ansible orchestrating stack creation specified by CloudFormation as
 accessed through the CLI. There is rarely an optimal choice of mechanism,
 and obvious trade-offs between them; the Ansible use of declarative
 mechanisms has distinct advantages for orchestration, but it does pay
-for it in terms of concision and lack of readability.
+for it with verbosity and lack of readability.
 
 Other design choices include:
 
